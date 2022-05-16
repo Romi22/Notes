@@ -286,4 +286,77 @@ Why do we need recursion?
 
  It depends on the situation what to choose recursion or iteration
 
- When to choose recursion 
+  When to choose recursion ?
+
+  - if you can divide the problem into similar sub problems (sub problems must be similar otherwise recursion is not a choice)
+
+ Hint to know the good candidate for recursion
+ a. Design an algorithm to compute nth..
+ b. Write code to list the n..
+ c. Implement a method to compute all
+
+
+2. Prominent use of recursion in DS like trees and graphs
+
+
+3. Used in many ALGORITHMS (dive & conques, greedy , DP)
+
+
+LOGIC BEHIND RECURSION :
+
+1. A method calls itself
+2. Exit from infinite loop
+
+e.g. 1
+
+static String recursionMethod(String[] parameters){
+ if(exit from condition satisfied)
+ {
+   return some value;
+ }
+ else
+ {
+  recursionMethod(modified parameters)
+ }
+}
+
+e.g. 2
+
+static void firstMethod()
+{
+  secondMethod();
+  System.out.println("I am the first method")
+}
+
+static void secondMethod()
+{
+  thirdMethod();
+  System.out.println("I am the second method")
+}
+
+static void thirdMethod()
+{
+  fourthmethod();
+  System.out.println("I am the third method")
+}
+
+static void fourthMethod()
+{
+  System.out.println("I am the fourth method")
+}
+
+STACK memory is maintained by the system for the method invocation (works on LIFO method)
+
+So the system needs to store the first method somewhere to come back for executing rest of the code once the second method execution is done.
+
+
+Stack appears:
+
+|             |
+|  thirdMethod|
+| secondMethod|
+| firstMethod |
+|_____________|
+
+here fourth method is not calling any other method , system does not need to store it somewhere for calling back
+
