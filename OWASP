@@ -1,0 +1,175 @@
+WEB APPLICATION SECURITY FOR BEGINNERS:
+
+TOP 10 vulnerabilities cause issues on WEB , these issues are identified by OWASP
+
+Open Web Application Security Project 
+
+
+NEW                                                             
+
+1. Injection
+2. Broken Authentication
+3. Sensitive data Exposure
+4. XML External Entities (NEW)
+5. Broken Access Control
+6. Security Misconfiguration
+7. Cross Site Scripting (XSS)
+8. Insecure Deserialization (NEW)
+9. Using Components with Unknown vulnerabilities
+10. Insufficient logging and Monitoring (NEW)
+
+OLD
+Note [] means are less important
+1. Injection
+2. Broken Authentication and [Session Management]
+3. Cross Site Scripting (XSS)
+4. Broken Access Control
+5. Security Misconfiguration
+6. Sensitive data Exposure
+7. [Insufficient Attack Protection]
+8. [Cross Site Request Forgery] CSRF
+9. Using Components with Unknown vulnerabilities
+10. [Underprotected API's]
+
+
+1. INJECTION 
+
+What is it?
+- Untrusted user input is interpreted by server and executed.
+
+What is the impact?
+- Data can be stolen, modified or deleted
+
+How to prevent?
+- Reject Untrusted/invalid input Data
+- Use latest Frameworks
+- Typically found by penetration testers / secure code review
+
+Always Sanitize your input 
+
+QUIZ 1:
+
+Q1 How to mitigate injection?
+
+Never trust user input / always sanitize user input 
+
+2. Broken Authentication and [Session Management]
+
+What is it?
+Incorrectly built auth and session management scheme that allows an attacker to impersonate another user.
+
+What is the impact?
+Attacker can take identity of victim
+
+How to prevent?
+Dont develop your own Authentication schemes
+
+- Use open source frameworks that are maintained by the community.
+- Use strong passwords (use upper,lower,number,special characters)
+- Require current credential when sensitive information is requested or changed.
+- Multi-factor Authentication (e.g. sms, password, fingerprint, iris scan etc)
+- log out or expire session after X amount of time
+- Be careful with 'remember me' functionality
+
+QUIZ 2:
+
+What is the impact of Broken Authentication and Session management and how can it be mitigated?
+
+The attacker can claim the identity of the victim and could be mitigated using two-factor authentication.
+
+3. Cross-Site Scripting (XSS)
+
+What is it?
+- Untrusted user input is interpreted by browser and executed  
+
+What is the impact?
+- Hijack user session, deface web sites, change content
+
+How to prevent?
+- Escape untrusted input data
+- Latest Ui Frameworks
+
+QUIZ 3:
+
+What is the most important message you want to communicate to your developers when you want them to mitigate Cross-Site Scripting?
+
+Religiously untrust input Data
+
+4. Broken Access Control
+
+- Restrictions on what authenticated users are allowed to do are not properly enforced.
+
+What is the impact?
+
+Attackers can access data, view sensitive files and modify Data
+
+How to prevent ?
+
+
+Deny access by default
+
+QUIZ :
+
+What is broken access control?
+
+Improper enforcement of authorization
+
+
+5. Security Misconfiguration 
+
+What is it?
+
+Human mistake of Misconfiguration ( providing a user with default password)
+
+What is the impact?
+
+Depends on Misconfiguration. Worst misconfiguration could result in loss of the system.
+
+How to prevent ?
+
+-  Force change of default credentials
+
+-  Least privilege : turns off everything by default (debugging admin interface)
+
+-  static tools that scan code for default settings 
+
+-  keep patching, updating and testing the system 
+
+-  regularly audit system deployment in production
+
+
+Catch exceptions; how elegant does the system fails?
+
+1. The expected behaviour of a query string (something we normally don't want user manipulating)
+
+2. The internal implementation of how a piece of untrusted data is handled (possible disclosure of weaknesses in design)
+
+3. Some very sensitive code structure details (e.g id)
+
+4. The physical location of the file on the developers machine (further application structure disclosure)
+
+5. Entire stack trace of the error (disclosure of internal events or methods).
+
+6. Version of the .NET framework the app is executing on 
+(discloses how app may handle certain conditions)
+ 
+QUIZ :
+
+Question 1:
+What is the most cost effective way to address security misconfiguration?
+
+Continuously scan for vulnerabilities , train your staff and focus on building & shipping more secure products.
+
+Question 2:
+Security misconfiguration is prevented by installing the latest patches.
+
+No
+
+Reason -  Security misconfiguration is not always fixable with a patch. For instance, you might want to allow unnamed accounts for some users for 
+ particular reason, even though this is considered bad practice. Typically this is not patchable.
+
+ Correct! As mentioned in the title of this vulnerability, sometimes you may accidentally misconfigure a 
+ system (e.g. leaving unused ports open) which leads to a vulnerability. Typically, this is not patchable.
+
+
+ 6. sensitive Data Exposure 
