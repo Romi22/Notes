@@ -172,4 +172,69 @@ Reason -  Security misconfiguration is not always fixable with a patch. For inst
  system (e.g. leaving unused ports open) which leads to a vulnerability. Typically, this is not patchable.
 
 
- 6. sensitive Data Exposure 
+ 6. Sensitive Data Exposure 
+
+ What is it?
+
+ Sensitive data is exposed, e.g. social security numbers, passwords, health records.
+
+ What is the impact?
+
+ Data that are lost, exposed or corrupted can have severe impact on business continuity.
+
+ How to prevent?
+
+ - Always obscure data (like credit card numbers) 
+
+ - Update cryptographic algorithm (MD5, DES, SHA-0 and SHA-1 are insecure)
+
+ - Use salted encryption on storage of passwords
+
+ QUIZ :
+
+ Question 1:
+What is the difference between encryption at rest an in transit?
+
+Encryption at rest covers the stored data, Encryption in transit covers data in flux
+
+7. Insuficient Attack Protection 
+
+Application are attacked but do not recognise it as attack, letting the attacker attack again and again.
+
+What is the impact?
+
+Detect and log normal and abnormal use of application.
+
+respond by automatically blocking abnormal users or range of IP address.
+
+Patch abnormal use quickly
+
+How can insufficient attack protection be mitigated?
+
+Identify , protect, detect and respond to abnormal use of web application.
+
+8. CSRF
+
+What is it?
+
+An attack that forces a victim to execute unwanted actions on a web application in which they are currently authenticated. 
+
+What is the impact?
+
+Victim unknowingly executes transactions. 
+
+How to prevent?
+
+Reauthenticate for all critical actions (Transfer money)
+
+Include hidden token in request 
+
+Most web frameworks have built-in CSRF protectection, but isn't enabled by default.
+
+
+QUIZ:
+
+Question 1:
+How can Cross-Site Request Forgery impact a banking web application?
+
+An attack may force a victim to execute unwanted transactions on a web application in which they are currently authenticated.
